@@ -151,12 +151,6 @@ function makeLibTorrent
         _currentStatus "7of8 Making LibTorrent"
 
 
-        if test -f ../secretSauce.sh
-        then
-            bash ../secretSauce.sh libtorrent
-        fi
-
-
         ./configure --with-posix-fallocate --disable-debug --enable-shared --enable-openssl --enable-largefile --enable-c++0x --enable-interrupt-socket --disable-static CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS"
         make $THREADS && make install
 
@@ -173,11 +167,6 @@ function makeRTorrent()
 
         cd rtorrent
         _currentStatus "8of8 Making rTorrent *Final Step*"
-
-        if test -f ../secretSauce.sh
-        then
-            bash ../secretSauce.sh rtorrent
-        fi
 
         ./autogen.sh
         ./configure --disable-debug  --with-xmlrpc-c  --with-pic --enable-threads --enable-c++0x --disable-static CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS"
