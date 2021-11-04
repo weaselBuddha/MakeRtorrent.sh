@@ -191,8 +191,8 @@ function makeRTorrent()
 
         exec &> >(tee -a BUILD_LOG.$$)
 
-        mkdir ~/WorkingDirectory
-        cd ~/WorkingDirectory
+        mkdir WorkingDirectory
+        cd WorkingDirectory
 
         MAIN
 
