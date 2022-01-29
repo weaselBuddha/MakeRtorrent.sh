@@ -103,7 +103,7 @@ function makeC-ares()
         cd c-ares
         _currentStatus "4of8 Making C-Ares Library"
         ./buildconf
-        ./configure --enable-nonblocking --enable-shared --disable-static CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS"
+        ./configure --enable-nonblocking --enable-shared --disable-static CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" -fPIC
         make $THREADS && make install
 
         _exitIfFailed $?
